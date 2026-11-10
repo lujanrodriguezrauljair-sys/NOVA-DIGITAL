@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carnicería El Buen Corte</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #faf7f2; color: #2b2b2b; }
+  header { background: #7a1f1f; color: #fff; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+  header h1 { font-size: 1.5rem; }
+  nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 500; }
+  nav a:hover { color: #f3c969; }
+  .hero { background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('[images.unsplash.com](https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=1400)') center/cover; color: #fff; text-align: center; padding: 120px 8%; }
+  .hero h2 { font-size: 2.6rem; margin-bottom: 15px; }
+  .hero p { font-size: 1.15rem; margin-bottom: 25px; }
+  .btn { background: #f3c969; color: #2b2b2b; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; transition: .3s; }
+  .btn:hover { transform: scale(1.05); }
+  .oferta { background: #f3c969; text-align: center; padding: 15px; font-weight: bold; font-size: 1.1rem; }
+  section { padding: 70px 8%; }
+  section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #7a1f1f; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+  .card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,.08); transition: .3s; }
+  .card:hover { transform: translateY(-6px); }
+  .card img { width: 100%; height: 180px; object-fit: cover; }
+  .card div { padding: 18px; }
+  .card h3 { margin-bottom: 6px; }
+  .precio { color: #7a1f1f; font-size: 1.3rem; font-weight: bold; margin-top: 8px; }
+  .beneficios { background: #fff; }
+  .beneficio { text-align: center; padding: 20px; }
+  .beneficio span { font-size: 2.5rem; }
+  .testimonios .card div { font-style: italic; }
+  footer { background: #2b2b2b; color: #ccc; text-align: center; padding: 30px; }
+  .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,.3); }
+  @media (max-width: 700px) { nav { display: none; } .hero h2 { font-size: 1.9rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🥩 El Buen Corte</h1>
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="oferta">🔥 OFERTA DE LA SEMANA: 2 kg de carne molida a solo Bs. 70 🔥</div>
+
+<div class="hero">
+  <h2>Carne fresca todos los días</h2>
+  <p>Cortes seleccionados, calidad garantizada y atención de confianza.</p>
+  <a href="#productos" class="btn">Ver precios</a>
+</div>
+
+<section id="productos">
+  <h2>Nuestros Cortes</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1603048297172-c92544798d5a?w=600)" alt="Lomo">
+      <div><h3>Lomo fino</h3><p>Suave y jugoso, ideal para parrilla.</p><p class="precio">Bs. 75 / kg</p></div>
+    </div>
+    <div class="card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=600)" alt="Costilla">
+      <div><h3>Costilla de res</h3><p>Perfecta para el asado del domingo.</p><p class="precio">Bs. 48 / kg</p></div>
+    </div>
+    <div class="card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=600)" alt="Pollo">
+      <div><h3>Pollo entero</h3><p>Fresco, de granja local.</p><p class="precio">Bs. 22 / kg</p></div>
+    </div>
+    <div class="card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=600)" alt="Cerdo">
+      <div><h3>Chuleta de cerdo</h3><p>Corte limpio y tierno.</p><p class="precio">Bs. 42 / kg</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="beneficios">
+  <h2>¿Por qué elegirnos?</h2>
+  <div class="grid">
+    <div class="beneficio"><span>🚚</span><h3>Delivery gratis</h3><p>En compras mayores a Bs. 150</p></div>
+    <div class="beneficio"><span>✅</span><h3>Higiene garantizada</h3><p>Cadena de frío controlada</p></div>
+    <div class="beneficio"><span>🔪</span><h3>Corte a tu gusto</h3><p>Te lo cortamos como quieras</p></div>
+    <div class="beneficio"><span>⭐</span><h3>+15 años</h3><p>Atendiendo a las familias</p></div>
+  </div>
+</section>
+
+<section class="testimonios">
+  <h2>Lo que dicen nuestros clientes</h2>
+  <div class="grid">
+    <div class="card"><div>"La mejor carne del barrio, siempre fresca." <br><b>— María L.</b></div></div>
+    <div class="card"><div>"Pedí por WhatsApp y llegó en 30 minutos." <br><b>— Jorge R.</b></div></div>
+    <div class="card"><div>"Precios justos y muy buena atención." <br><b>— Carla M.</b></div></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Visítanos</h2>
+  <p style="text-align:center">📍 Av. Principal #123 &nbsp;|&nbsp; 🕗 Lunes a Sábado 7:00 – 20:00 &nbsp;|&nbsp; 📞 70000000</p>
+</section>
+
+<footer>© 2026 Carnicería El Buen Corte — Todos los derechos reservados</footer>
+
+<a class="whatsapp" href="[wa.me](https://wa.me/59170000000)" target="_blank">💬 Pedir por WhatsApp</a>
+
+</body>
+</html>

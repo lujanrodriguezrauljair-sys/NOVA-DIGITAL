@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapStyle - Gorras</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #111; color: #eee; }
+  header { background: #000; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; border-bottom: 2px solid #ff4d00; }
+  header h1 { font-size: 1.6rem; letter-spacing: 2px; }
+  header h1 span { color: #ff4d00; }
+  nav a { color: #eee; text-decoration: none; margin-left: 20px; }
+  nav a:hover { color: #ff4d00; }
+  .carrito { background: #ff4d00; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
+  .hero { background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('[images.unsplash.com](https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1400)') center/cover; text-align: center; padding: 130px 8%; }
+  .hero h2 { font-size: 3rem; text-transform: uppercase; }
+  .hero p { margin: 15px 0 25px; font-size: 1.15rem; }
+  .btn { background: #ff4d00; color: #fff; padding: 12px 30px; border: none; border-radius: 30px; text-decoration: none; font-weight: bold; cursor: pointer; transition: .3s; display: inline-block; }
+  .btn:hover { background: #fff; color: #ff4d00; }
+  .contador { background: #ff4d00; text-align: center; padding: 15px; font-weight: bold; font-size: 1.1rem; }
+  section { padding: 70px 8%; }
+  section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 25px; }
+  .card { background: #1c1c1c; border-radius: 14px; overflow: hidden; position: relative; transition: .3s; }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(255,77,0,.3); }
+  .card img { width: 100%; height: 220px; object-fit: cover; }
+  .card .info { padding: 18px; }
+  .etiqueta { position: absolute; top: 12px; left: 12px; background: #ff4d00; padding: 4px 10px; border-radius: 6px; font-size: .8rem; font-weight: bold; }
+  .precio { font-size: 1.3rem; font-weight: bold; color: #ff4d00; margin: 8px 0 12px; }
+  .antes { text-decoration: line-through; color: #888; font-size: .95rem; margin-left: 8px; }
+  .extra { background: #1a1a1a; }
+  .extra .item { text-align: center; padding: 20px; }
+  .extra span { font-size: 2.5rem; }
+  footer { background: #000; text-align: center; padding: 30px; color: #888; }
+  .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+  @media (max-width: 700px) { nav a:not(.carrito) { display: none; } .hero h2 { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CAP<span>STYLE</span></h1>
+  <nav>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#personaliza">Personaliza</a>
+    <a href="#" class="carrito">🛒 <span id="num">0</span></a>
+  </nav>
+</header>
+
+<div class="contador">⏳ 20% DE DESCUENTO termina en: <span id="tiempo"></span></div>
+
+<div class="hero">
+  <h2>Tu estilo empieza arriba</h2>
+  <p>Gorras originales, urbanas y deportivas. Envíos a toda Bolivia.</p>
+  <a href="#catalogo" class="btn">Comprar ahora</a>
+</div>
+
+<section id="catalogo">
+  <h2>Catálogo</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="etiqueta">NUEVO</span>
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600)" alt="Gorra negra">
+      <div class="info"><h3>Snapback Black</h3><p class="precio">Bs. 85 <span class="antes">Bs. 110</span></p><button class="btn" onclick="agregar()">Agregar</button></div>
+    </div>
+    <div class="card">
+      <span class="etiqueta">TOP</span>
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=600)" alt="Gorra trucker">
+      <div class="info"><h3>Trucker Classic</h3><p class="precio">Bs. 70 <span class="antes">Bs. 90</span></p><button class="btn" onclick="agregar()">Agregar</button></div>
+    </div>
+    <div class="card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1534215754734-18e55d13e346?w=600)" alt="Gorra beisbol">
+      <div class="info"><h3>Baseball Beige</h3><p class="precio">Bs. 65</p><button class="btn" onclick="agregar()">Agregar</button></div>
+    </div>
+    <div class="card">
+      <span class="etiqueta">-20%</span>
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=600)" alt="Gorra deportiva">
+      <div class="info"><h3>Sport Pro</h3><p class="precio">Bs. 95 <span class="antes">Bs. 120</span></p><button class="btn" onclick="agregar()">Agregar</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="personaliza" class="extra">
+  <h2>¿Por qué CapStyle?</h2>
+  <div class="grid">
+    <div class="item"><span>🎨</span><h3>Personaliza tu gorra</h3><p>Bordamos tu nombre o logo desde Bs. 25</p></div>
+    <div class="item"><span>📦</span><h3>Envío a toda Bolivia</h3><p>Gratis desde 2 gorras</p></div>
+    <div class="item"><span>🏆</span><h3>Calidad premium</h3><p>Materiales resistentes</p></div>
+    <div class="item"><span>🎁</span><h3>Regalo sorpresa</h3><p>En tu primera compra</p></div>
+  </div>
+</section>
+
+<footer>© 2026 CapStyle — Síguenos en Instagram y TikTok @capstyle</footer>
+
+<a class="whatsapp" href="[wa.me](https://wa.me/59170000000)" target="_blank">💬 Consultar</a>
+
+<script>
+  let cantidad = 0;
+  function agregar() {
+    cantidad++;
+    document.getElementById('num').textContent = cantidad;
+    alert('¡Gorra agregada al carrito! 🧢');
+  }
+  // Contador regresivo de 24 horas
+  let fin = Date.now() + 24 * 60 * 60 * 1000;
+  setInterval(() => {
+    let r = fin - Date.now();
+    let h = Math.floor(r / 3600000), m = Math.floor(r % 3600000 / 60000), s = Math.floor(r % 60000 / 1000);
+    document.getElementById('tiempo').textContent = `${h}h ${m}m ${s}s`;
+  }, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransRápido - Transporte</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #1e2a38; }
+  header { background: #0d3b66; color: #fff; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+  nav a { color: #fff; text-decoration: none; margin-left: 20px; }
+  nav a:hover { color: #faa307; }
+  .hero { background: linear-gradient(rgba(13,59,102,.75), rgba(13,59,102,.75)), url('[images.unsplash.com](https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1400)') center/cover; color: #fff; padding: 110px 8%; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; }
+  .hero-texto { flex: 1; min-width: 280px; }
+  .hero h2 { font-size: 2.6rem; margin-bottom: 15px; }
+  .cotizador { background: #fff; color: #1e2a38; padding: 25px; border-radius: 14px; width: 330px; box-shadow: 0 8px 25px rgba(0,0,0,.3); }
+  .cotizador h3 { margin-bottom: 15px; color: #0d3b66; }
+  .cotizador select, .cotizador input { width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 8px; }
+  .btn { background: #faa307; color: #1e2a38; padding: 12px; border: none; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; font-size: 1rem; }
+  .btn:hover { background: #e08e00; }
+  #resultado { margin-top: 12px; font-weight: bold; color: #0d3b66; text-align: center; font-size: 1.2rem; }
+  section { padding: 70px 8%; }
+  section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #0d3b66; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+  .card { background: #fff; border-radius: 14px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,.07); transition: .3s; text-align: center; }
+  .card:hover { transform: translateY(-6px); }
+  .card span { font-size: 2.5rem; }
+  .precio { color: #faa307; font-size: 1.3rem; font-weight: bold; margin-top: 10px; }
+  .numeros { background: #0d3b66; color: #fff; text-align: center; }
+  .numeros h2 { color: #fff; }
+  .numeros h3 { font-size: 2.5rem; color: #faa307; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; }
+  th, td { padding: 14px; text-align: center; border-bottom: 1px solid #eee; }
+  th { background: #0d3b66; color: #fff; }
+  footer { background: #1e2a38; color: #aaa; text-align: center; padding: 30px; }
+  .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+  @media (max-width: 700px) { nav { display: none; } .hero h2 { font-size: 1.9rem; } .cotizador { width: 100%; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🚛 TransRápido</h1>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#tarifas">Tarifas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-texto">
+    <h2>Llevamos tu carga seguro y a tiempo</h2>
+    <p>Mudanzas, encomiendas y carga pesada por todo el país. Con seguimiento y seguro incluido.</p>
+  </div>
+  <div class="cotizador">
+    <h3>💰 Cotiza al instante</h3>
+    <select id="servicio">
+      <option value="5">Encomienda pequeña</option>
+      <option value="8">Mudanza</option>
+      <option value="12">Carga pesada</option>
+    </select>
+    <input type="number" id="km" placeholder="Distancia en km">
+    <button class="btn" onclick="cotizar()">Calcular precio</button>
+    <div id="resultado"></div>
+  </div>
+</div>
+
+<section id="servicios">
+  <h2>Nuestros Servicios</h2>
+  <div class="grid">
+    <div class="card"><span>📦</span><h3>Encomiendas</h3><p>Entregas en el mismo día dentro de la ciudad.</p><p class="precio">Desde Bs. 25</p></div>
+    <div class="card"><span>🏠</span><h3>Mudanzas</h3><p>Personal que carga y descarga incluido.</p><p class="precio">Desde Bs. 350</p></div>
+    <div class="card"><span>🚛</span><h3>Carga pesada</h3><p>Camiones de 5 a 30 toneladas.</p><p class="precio">Desde Bs. 900</p></div>
+    <div class="card"><span>🛣️</span><h3>Interdepartamental</h3><p>La Paz, Cochabamba, Santa Cruz y más.</p><p class="precio">Desde Bs. 150</p></div>
+  </div>
+</section>
+
+<section class="numeros">
+  <h2>Nos respaldan los números</h2>
+  <div class="grid">
+    <div><h3>+5.000</h3><p>Envíos realizados</p></div>
+    <div><h3>98%</h3><p>Entregas a tiempo</p></div>
+    <div><h3>24/7</h3><p>Atención al cliente</p></div>
+    <div><h3>9</h3><p>Departamentos cubiertos</p></div>
+  </div>
+</section>
+
+<section id="tarifas">
+  <h2>Tarifas Interdepartamentales</h2>
+  <table>
+    <tr><th>Ruta</th><th>Encomienda</th><th>Carga (por tonelada)</th></tr>
+    <tr><td>La Paz – Cochabamba</td><td>Bs. 150</td><td>Bs. 450</td></tr>
+    <tr><td>La Paz – Santa Cruz</td><td>Bs. 220</td><td>Bs. 700</td></tr>
+    <tr><td>Cochabamba – Santa Cruz</td><td>Bs. 170</td><td>Bs. 500</td></tr>
+    <tr><td>La Paz – Oruro</td><td>Bs. 90</td><td>Bs. 300</td></tr>
+  </table>
+</section>
+
+<section id="contacto">
+  <h2>Contáctanos</h2>
+  <p style="text-align:center">📍 Zona Central, Calle Comercio #45 &nbsp;|&nbsp; 📞 70000000 &nbsp;|&nbsp; ✉️ info@transrapido.bo</p>
+</section>
+
+<footer>© 2026 TransRápido — Seguridad y puntualidad en cada viaje</footer>
+
+<a class="whatsapp" href="[wa.me](https://wa.me/59170000000)" target="_blank">💬 Cotizar por WhatsApp</a>
+
+<script>
+  function cotizar() {
+    let precioKm = parseFloat(document.getElementById('servicio').value);
+    let km = parseFloat(document.getElementById('km').value);
+    if (!km || km <= 0) {
+      document.getElementById('resultado').textContent = 'Ingresa una distancia válida';
+      return;
+    }
+    let total = Math.max(25, precioKm * km);
+    document.getElementById('resultado').textContent = 'Precio estimado: Bs. ' + total.toFixed(2);
+  }
+</script>
+</body>
+</html>

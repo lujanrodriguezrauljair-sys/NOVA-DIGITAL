@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NOVA DIGITAL | Soluciones Digitales</title>
+
+<meta name="description" content="NOVA DIGITAL crea páginas web, aplicaciones, tiendas online y soluciones digitales para empresas y negocios.">
+
+<style>
+:root {
+  --fondo: #0b1020;
+  --panel: #121a30;
+  --morado: #7657ff;
+  --azul: #21c5e8;
+  --blanco: #ffffff;
+  --gris: #aab5ca;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--blanco);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: rgba(11,16,32,.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #27314c;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--morado);
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: #d4d9e7;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  color: var(--azul);
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(120deg,var(--morado),#4938cb);
+  padding: 13px 23px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #7657ff55;
+}
+
+.hero {
+  min-height: 570px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 40%,#4938cb55,transparent 35%),
+    radial-gradient(circle at 10% 90%,#21c5e822,transparent 35%),
+    var(--fondo);
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
+
+.etiqueta {
+  color: var(--azul);
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(38px,7vw,68px);
+  line-height: 1.1;
+  margin: 25px 0;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg,#8b72ff,#20d4ed);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: var(--gris);
+  font-size: 18px;
+}
+
+section {
+  padding: 85px 7%;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.titulo h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.titulo p {
+  color: var(--gris);
+}
+
+.servicios-grid,
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 23px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #293451;
+  border-radius: 15px;
+  padding: 28px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: var(--morado);
+}
+
+.icono {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--gris);
+  font-size: 14px;
+}
+
+#proyectos {
+  background: #0e1528;
+}
+
+.proyecto {
+  overflow: hidden;
+  padding: 0;
+}
+
+.proyecto img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.proyecto-info {
+  padding: 23px;
+}
+
+.categoria {
+  color: var(--azul);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.proyecto h3 {
+  margin: 10px 0;
+}
+
+.proyecto p {
+  margin-bottom: 18px;
+}
+
+.proyecto .btn {
+  font-size: 13px;
+}
+
+.nosotros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.nosotros h2 {
+  font-size: 37px;
+  margin-bottom: 20px;
+}
+
+.nosotros p {
+  color: var(--gris);
+  margin-bottom: 20px;
+}
+
+.lista {
+  display: grid;
+  gap: 13px;
+  margin-top: 20px;
+}
+
+.lista div {
+  background: var(--panel);
+  padding: 13px;
+  border-radius: 8px;
+}
+
+.caja-idea {
+  min-height: 300px;
+  border-radius: 20px;
+  background: linear-gradient(135deg,#7057ff,#152d58,#12a6c4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px;
+}
+
+.caja-idea h3 {
+  font-size: 35px;
+}
+
+.contacto {
+  background:
+    radial-gradient(circle at center,#4938cb44,transparent 60%),
+    #10182d;
+}
+
+.formulario {
+  max-width: 650px;
+  margin: auto;
+  background: var(--panel);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #293451;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0 18px;
+  background: #0b1020;
+  border: 1px solid #35415f;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+}
+
+.formulario label {
+  font-size: 14px;
+  color: #dce2f0;
+}
+
+.formulario button {
+  width: 100%;
+  font-size: 16px;
+}
+
+footer {
+  background: #080d19;
+  padding: 35px 7%;
+  text-align: center;
+  color: var(--gris);
+}
+
+footer strong {
+  color: white;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: #20c76b;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 40px;
+  font-weight: bold;
+  z-index: 200;
+  box-shadow: 0 5px 20px #0008;
+}
+
+@media(max-width:850px) {
+  .servicios-grid,
+  .proyectos-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .nosotros {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:600px) {
+  .menu {
+    display: none;
+  }
+
+  .hero {
+    padding: 80px 6%;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+
+  .servicios-grid,
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo h2 {
+    font-size: 29px;
+  }
+
+  .formulario {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+  <a href="#inicio" class="logo">✦ NOVA <span>DIGITAL</span></a>
+
+  <div class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+</nav>
+</header>
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+<div class="hero-content">
+
+  <div class="etiqueta">BIENVENIDO A NOVA DIGITAL</div>
+
+  <h1>
+    Transformamos tus ideas en
+    <span>soluciones digitales.</span>
+  </h1>
+
+  <p>
+    Creamos páginas web, aplicaciones, tiendas online
+    y herramientas digitales para impulsar tu negocio.
+    Tu crecimiento comienza aquí.
+  </p>
+
+  <a href="#contacto" class="btn">Solicitar mi proyecto →</a>
+
+</div>
+</section>
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+<div class="contenedor">
+
+<div class="titulo">
+  <h2>Nuestros servicios</h2>
+  <p>Todo lo que tu negocio necesita para crecer en Internet.</p>
+</div>
+
+<div class="servicios-grid">
+
+  <div class="card">
+    <div class="icono">🌐</div>
+    <h3>Páginas web</h3>
+    <p>Diseñamos páginas profesionales, modernas y adaptables a celulares y computadoras.</p>
+  </div>
+
+  <div class="card">
+    <div class="icono">📱</div>
+    <h3>Aplicaciones digitales</h3>
+    <p>Desarrollamos aplicaciones y herramientas digitales para facilitar tu trabajo.</p>
+  </div>
+
+  <div class="card">
+    <div class="icono">🛒</div>
+    <h3>Tiendas online</h3>
+    <p>Vende tus productos por Internet con catálogos y sistemas de pedidos.</p>
+  </div>
+
+  <div class="card">
+    <div class="icono">🎨</div>
+    <h3>Diseño gráfico</h3>
+    <p>Logotipos, publicidad, identidad visual y diseños para redes sociales.</p>
+  </div>
+
+  <div class="card">
+    <div class="icono">💻</div>
+    <h3>Desarrollo web</h3>
+    <p>Plataformas, sistemas y páginas personalizadas para empresas.</p>
+  </div>
+
+  <div class="card">
+    <div class="icono">📈</div>
+    <h3>Soluciones empresariales</h3>
+    <p>Herramientas digitales para mejorar la administración de tu negocio.</p>
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- PROYECTOS -->
+
+<section id="proyectos">
+<div class="contenedor">
+
+<div class="titulo">
+  <h2>Proyectos de demostración</h2>
+  <p>Descubre algunos ejemplos de lo que podemos crear para tu negocio.</p>
+</div>
+
+<div class="proyectos-grid">
+
+  <!-- PROYECTO 1 -->
+
+  <div class="card proyecto">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+         alt="Paisaje de montaña y carretera">
+
+    <div class="proyecto-info">
+      <div class="categoria">TRANSPORTE Y TURISMO</div>
+
+      <h3>RUTAS DEL TRÓPICO</h3>
+
+      <p>
+        Una plataforma para conectar Cochabamba
+        con las localidades del Trópico.
+        Consulta rutas, horarios, precios y reservas.
+      </p>
+
+      <button class="btn"
+        onclick="verProyecto('transporte')">
+        Ver demostración →
+        <a href="transporte.html">Transporte</a>
+      </button>
+    </div>
+  </div>
+
+  <!-- PROYECTO 2 -->
+
+  <div class="card proyecto">
+    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800"
+         alt="Gorras de moda">
+
+    <div class="proyecto-info">
+      <div class="categoria">MODA Y COMERCIO</div>
+
+      <h3>GORRA STYLE</h3>
+
+      <p>
+        Una tienda virtual especializada en gorras.
+        Catálogo, precios, modelos, promociones
+        y pedidos por WhatsApp.
+      </p>
+
+      <button class="btn"
+        onclick="verProyecto('gorras')">
+        Ver demostración →
+        <a href="gorras.html">Gorras</a>
+      </button>
+    </div>
+  </div>
+
+  <!-- PROYECTO 3 -->
+
+  <div class="card proyecto">
+    <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800"
+         alt="Carnes frescas">
+
+    <div class="proyecto-info">
+      <div class="categoria">ALIMENTACIÓN Y COMERCIO</div>
+      <h3>CARNES SELECTAS</h3>
+
+      <p>
+        Una página para una agencia de carnes,
+        con catálogo de cortes, precios,
+        promociones y pedidos.
+      </p>
+
+      <button class="btn"
+        onclick="verProyecto('carnes')">
+        Ver demostración →
+        <a href="carniceria.html">Carnicería</a>
+      </button>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- NOSOTROS -->
+
+<section id="nosotros">
+<div class="contenedor nosotros">
+
+<div>
+  <div class="etiqueta">CONÓCENOS</div>
+
+  <h2>Hacemos realidad tus ideas digitales.</h2>
+
+  <p>
+    En NOVA DIGITAL creemos que cada negocio
+    merece tener presencia en Internet.
+  </p>
+
+  <p>
+    Nuestro objetivo es ofrecer soluciones
+    tecnológicas modernas, accesibles y
+    profesionales que ayuden a emprendedores
+    y empresas a crecer.
+  </p>
+
+  <div class="lista">
+    <div>✓ Diseños modernos y profesionales</div>
+    <div>✓ Experiencia adaptable a celulares</div>
+    <div>✓ Soluciones para cada tipo de negocio</div>
+    <div>✓ Atención personalizada</div>
+  </div>
+</div>
+
+<div class="caja-idea">
+  <div>
+    <h3>✦ NOVA DIGITAL</h3>
+    <p>Tu idea merece estar en Internet.</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+<div class="contenedor">
+
+<div class="titulo">
+  <h2>Hablemos de tu proyecto</h2>
+  <p>Cuéntanos qué necesitas y solicita una cotización.</p>
+</div>
+
+<form class="formulario" onsubmit="enviarWhatsApp(event)">
+
+  <label>Tu nombre</label>
+  <input type="text" id="nombre"
+         placeholder="Escribe tu nombre" required>
+
+  <label>Nombre de tu negocio</label>
+  <input type="text" id="negocio"
+         placeholder="Nombre de tu empresa">
+
+  <label>¿Qué servicio necesitas?</label>
+
+  <select id="servicio" required>
+    <option value="">Selecciona un servicio</option>
+    <option>Página web</option>
+    <option>Tienda online</option>
+    <option>Aplicación digital</option>
+    <option>Diseño gráfico</option>
+    <option>Desarrollo web</option>
+    <option>Sistema empresarial</option>
+    <option>Otro proyecto</option>
+  </select>
+
+  <label>Cuéntanos tu idea</label>
+
+  <textarea id="mensaje" rows="5"
+    placeholder="Describe qué necesitas para tu negocio..."
+    required></textarea>
+
+  <button class="btn" type="submit">
+    Enviar solicitud por WhatsApp →
+  </button>
+
+</form>
+</div>
+</section>
+
+<footer>
+  <h2><strong>✦ NOVA DIGITAL</strong></h2>
+
+  <p>Transformamos tus ideas en soluciones digitales.</p>
+
+  <p style="margin-top:15px;font-size:12px">
+    © 2026 NOVA DIGITAL. Todos los derechos reservados.
+  </p>
+</footer>
+
+<a class="whatsapp"
+   href="#contacto">
+   ☎ Contactar
+</a>
+<script>
+const NUMERO_WHATSAPP = "59164853029";
+
+function enviarWhatsApp(event) {
+
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const negocio = document.getElementById("negocio").value;
+  const servicio = document.getElementById("servicio").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  const texto =
+    "Hola NOVA DIGITAL, quiero solicitar información.%0A%0A" +
+    "Nombre: " + encodeURIComponent(nombre) + "%0A" +
+    "Negocio: " + encodeURIComponent(negocio) + "%0A" +
+    "Servicio: " + encodeURIComponent(servicio) + "%0A" +
+    "Mi idea: " + encodeURIComponent(mensaje);
+
+  window.open(
+    "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + texto,
+    "_blank"
+  );
+}
+
+function verProyecto(tipo) {
+
+  const proyectos = {
+
+    transporte: "RUTAS DEL TRÓPICO: Plataforma de transporte entre Cochabamba y el Trópico, con rutas, horarios, destinos y reservas.",
+
+    gorras: "GORRA STYLE: Tienda online de gorras con catálogo, precios, modelos, promociones y pedidos por WhatsApp.",
+
+    carnes: "CARNES SELECTAS: Página comercial para una agencia de carnes con catálogo de cortes, precios, promociones y pedidos."
+
+  };
+
+  alert(proyectos[tipo] + "\n\nEste es un proyecto conceptual de demostración de NOVA DIGITAL.");
+}
+
+</script>
+
+</body>
+</html>
